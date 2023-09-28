@@ -15,13 +15,16 @@
 static void comprovate_char(va_list a,  char const *argc, int i)
 {
 	if (argc[i] == 'c')
-		printf("c");
+		//comprovar que vaya bien
+		putstr(va_arg(a,char), &i);
 	else if (argc[i] == 's')
+		// comprovar que cuente bien
+		//putstr(char *str, int *len)
 		putstr(va_arg(a, char*), &i);
-    else if (argc[i] == 'p')	
+    else if (argc[i] == 'p')
 		printf("p");
 	else if (argc[i] == 'd' || argc[i] == 'i')
-        printf("di");
+        putnbase(long long n, int base, &i)
     else if (argc[i] == 'u')
 		printf("u");
 	else if (argc[i] == 'x' || argc[i] == 'X')

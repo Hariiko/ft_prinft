@@ -13,9 +13,9 @@
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 
 char	*ft_strchr(const char *s, int c);
