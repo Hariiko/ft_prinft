@@ -6,16 +6,19 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 19:49:31 by laltarri          #+#    #+#             */
-/*   Updated: 2023/09/27 19:59:40 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:56:29 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void putstr(char *str, int *len)
+void ft_putstr(char *str, int *len)
 {
 	if (!str)
 		str = "(null)";
 	while (*str)
-		*len += write (1, str++, 1); 
+	{
+		pt_putchar(*str, len);
+		str++;
+	}
 }

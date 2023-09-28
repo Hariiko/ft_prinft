@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbase.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 17:50:19 by laltarri          #+#    #+#             */
-/*   Updated: 2023/09/28 21:09:08 by laltarri         ###   ########.fr       */
+/*   Created: 2023/09/28 21:06:52 by laltarri          #+#    #+#             */
+/*   Updated: 2023/09/28 21:20:47 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
-
-
-char	*ft_strchr(const char *s, int c);
-int		ft_printf(char const *argc, ... );
-void	pt_putstr(char *str, int *len);
-void	pt_putchar(char c, int *i);
-
-#endif
+void	pt_putnbase(long long n, int base, int *len)
+{
+    if (n < 0)
+    {
+        *len += write(1, "-", 1);
+        n = -n;
+    }
+    if (n >= base)
+        putnbase (n / base, base, len);
+        *len += write(1, &"0123456789abcdef"[n % base, 1]);
+}
