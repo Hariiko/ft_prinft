@@ -6,7 +6,7 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 20:51:33 by laltarri          #+#    #+#             */
-/*   Updated: 2023/09/28 21:20:50 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:31:23 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ static void comprovate_char(va_list a,  char c, int *i)
 	else if (c == 's')
 		pt_putstr(va_arg(a, char*), i);
     else if (c == 'p')
-		printf("p");
+		pt_putnbase(va_arg(a,void*), 16,i,c);
 	else if (c == 'd' || c == 'i')
 		pt_putnbase(va_arg(a, long long), 10, &i);
     else if (c == 'u')
-		printf("u");
+		pt_putnbase(va_arg(a, long long), 10, i,c);
 	else if (c == 'x' || c == 'X')
-        printf("xX");
+       	pt_putnbase(va_arg(a, long long), 16, i,c);
 	else if(c == '%')
-		printf("%%");
+		pt_putchar(c,i);
 }
 
 int ft_printf(char const *argc, ...)
@@ -55,10 +55,10 @@ int ft_printf(char const *argc, ...)
 	return (value);
 }
 
-int main ()
+/*int main ()
 {
 	int a = ft_printf("%i\n", 1);
 	printf("%d\n", a);
 	//printf("%");
 	return 0;
-}
+}*/

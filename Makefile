@@ -1,8 +1,13 @@
-HEADER	=	libft.h
+HEADER	=	libftprintf.h
 
-NAME	=	libft.a
+NAME	=	libftprintf.a
 
-SRCS	=	ft_prinft.c 
+SRCS	=	ft_prinft.c /
+			ft_putnbase.c /
+			ft_putstr.c /
+			ft_strchr.c /
+			pt_putbase.c /
+			pt_putchar.c
 
 OBJS	= 	$(SRCS:.c=.o)
 
