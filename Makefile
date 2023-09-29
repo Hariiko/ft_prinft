@@ -1,12 +1,23 @@
-HEADER	=	libftprintf.h
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/09/29 23:35:25 by laltarri          #+#    #+#              #
+#    Updated: 2023/09/29 23:36:44 by laltarri         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+HEADER	=	ft_printf.h
 
 NAME	=	libftprintf.a
 
-SRCS	=	ft_prinft.c /
-			ft_putnbase.c /
-			ft_putstr.c /
-			ft_strchr.c /
-			pt_putbase.c /
+SRCS	=	ft_printf.c \
+			ft_putstr.c \
+			ft_strchr.c \
+			pt_putbase.c \
 			pt_putchar.c
 
 OBJS	= 	$(SRCS:.c=.o)
@@ -20,9 +31,9 @@ LIBC	= 	ar -rcs
 FLAGS	= 	-Wall -Wextra -Werror
 
 .c.o :
-	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+	${CC} ${FLAGS} -c $< -o $@
 
-$(NAME):: ${OBJS} ${HEADER}
+$(NAME): ${OBJS} ${HEADER}
 	$(LIBC) $(NAME) $(OBJS)
 
 all: $(NAME)
@@ -35,4 +46,4 @@ clean:
 
 re: fclean all
 
-.PHONY: all clean fclean re  bonus
+.PHONY: all clean fclean re

@@ -6,13 +6,13 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 20:41:58 by laltarri          #+#    #+#             */
-/*   Updated: 2023/09/28 21:06:30 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/09/29 23:25:52 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h" 
 
-void	pt_putchar(char c, int *i)
+void	pt_putchar(int c, int *i)
 {
 	int cont;
 
