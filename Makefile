@@ -6,7 +6,7 @@
 #    By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/29 23:35:25 by laltarri          #+#    #+#              #
-#    Updated: 2023/09/29 23:36:44 by laltarri         ###   ########.fr        #
+#    Updated: 2023/10/01 18:41:04 by laltarri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS	=	ft_printf.c \
 			ft_putstr.c \
 			ft_strchr.c \
 			pt_putbase.c \
-			pt_putchar.c
+			pt_putchar.c \
+			ft_putpointer.c
 
 OBJS	= 	$(SRCS:.c=.o)
 

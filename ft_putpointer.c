@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pt_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 20:41:58 by laltarri          #+#    #+#             */
-/*   Updated: 2023/10/01 19:24:27 by laltarri         ###   ########.fr       */
+/*   Created: 2023/10/01 18:37:56 by laltarri          #+#    #+#             */
+/*   Updated: 2023/10/01 19:17:23 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h" 
+#include "ft_printf.h"
 
-void	pt_putchar(int c, int *i)
+void	ft_putpointer(uintptr_t n, int base, int *len)
 {
-	int	cont;
+	uintptr_t	i;
 
-	cont = write(1, &c, 1);
-	if (cont == -1)
-		*i = -1;
-	(*i)++;
+	i = 0;
+	while (n / i >= (uintptr_t)base)
+		i *= base;
+	while (i > 0)
+	{
+		*len += write(1, &"0123456789abcdef"[(n / i) % base], 1);
+		i /= base;
+	}
 }
