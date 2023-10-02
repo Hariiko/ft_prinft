@@ -6,7 +6,7 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 20:41:58 by laltarri          #+#    #+#             */
-/*   Updated: 2023/10/01 19:24:27 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:53:13 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	pt_putchar(int c, int *i)
 {
-	int	cont;
-
-	cont = write(1, &c, 1);
-	if (cont == -1)
-		*i = -1;
-	(*i)++;
+	if (write(1, &c, 1) == -1)
+		(*i) = -1;
+	else
+		(*i)++;
 }

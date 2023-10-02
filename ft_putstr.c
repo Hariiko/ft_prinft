@@ -15,10 +15,18 @@
 void	ft_putstr(char *str, int *len)
 {
 	if (!str)
-		str = "(null)";
+	{
+		if (write(1, "(null)", 6) == -1)
+			*len = -1;
+		else
+			*len += 6;
+		return ;
+	}
 	while (*str)
 	{
 		pt_putchar(*str, len);
+		if(*len == -1)
+			return ;
 		str++;
 	}
 }

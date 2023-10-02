@@ -6,7 +6,7 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 20:51:33 by laltarri          #+#    #+#             */
-/*   Updated: 2023/10/01 19:15:15 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:49:38 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,12 @@
 
 static void	comprovate_char(va_list a, char c, int *i)
 {
-	void		*ptr;
-	uintptr_t	e;
-
 	if (c == 'c')
 		pt_putchar(va_arg(a, int), i);
 	else if (c == 's')
 		ft_putstr(va_arg(a, char *), i);
 	else if (c == 'p')
-	{
-		pt_putchar('0', i);
-		pt_putchar('x', i);
-		*ptr = va_arg(a, void *);
-		e = (uintptr_t) ptr;
-		ft_putpointer(e, 16, i);
-	}
+		ft_putpointer(va_arg(a, void *), i);
 	else if (c == 'd' || c == 'i')
 		pt_putbase(va_arg(a, int), 10, i, c);
 	else if (c == 'u')
@@ -60,16 +51,19 @@ int	ft_printf(char const *argc, ...)
 		}
 		else
 			pt_putchar(argc[i], &value);
+		if(value == -1)
+			return -1;
 		i++;
 	}
 	va_end(a);
 	return (value);
 }
-/*
-int main ()
-{
-	printf("%d\n", ft_printf(" %u ",1));
+
+/*int main ()
+  {
+	int e = 34;
+	printf("%d\n", ft_printf("\001\002\007\v\010\f\r\n"));
 	printf("\n");
-	printf("%d\n", printf(" %u ",1));
+	printf("%d\n", printf("\001\002\007\v\010\f\r\n"));
 	return 0;
 }*/

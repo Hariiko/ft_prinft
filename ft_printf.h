@@ -6,7 +6,7 @@
 /*   By: laltarri <laltarri@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 17:50:19 by laltarri          #+#    #+#             */
-/*   Updated: 2023/10/01 19:16:13 by laltarri         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:45:16 by laltarri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_printf(char const *argc, ...);
 void	ft_putstr(char *str, int *len);
 char	*ft_strchr(const char *s, int c);
 void	pt_putbase(long long n, int base, int *len, char c);
-void	ft_putpointer(uintptr_t n, int base, int *len);
+void	ft_putpointer(void *n, int *len);
 void	pt_putchar(int c, int *i);
 
 #endif
