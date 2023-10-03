@@ -48,6 +48,8 @@ int	ft_printf(char const *argc, ...)
 			if (!ft_strchr("cspdiuxX%", argc[i]) || !argc[i])
 				return (-1);
 			comprovate_char(a, argc[i], &value);
+			if(value == -1)
+				return -1;
 		}
 		else
 			pt_putchar(argc[i], &value);
