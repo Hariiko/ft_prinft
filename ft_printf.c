@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdint.h>
 
 static void	comprovate_char(va_list a, char c, int *i)
 {
@@ -60,12 +59,3 @@ int	ft_printf(char const *argc, ...)
 	va_end(a);
 	return (value);
 }
-
-/*int main ()
-  {
-	int e = 34;
-	printf("%d\n", ft_printf("\001\002\007\v\010\f\r\n"));
-	printf("\n");
-	printf("%d\n", printf("\001\002\007\v\010\f\r\n"));
-	return 0;
-}*/

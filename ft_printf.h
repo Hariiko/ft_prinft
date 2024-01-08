@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdint.h>
 
 char	*ft_strchr(const char *s, int c);
 int		ft_printf(char const *argc, ...);
